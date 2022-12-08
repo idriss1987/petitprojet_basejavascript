@@ -1,0 +1,46 @@
+/* Combinateurs */
+
+/* espace je selectionne tous les enfants p dans la div */
+div p{
+   background:white;
+}
+
+/* > enfants directs */
+div>div{
+    background:transparent;
+}
+
+/* + premier element adjacent */
+p+img {
+    border : 1px solid black;
+}
+
+/* ~ elements adjacents (siblings) */
+p~img{
+    border : 1px solid red;
+}
+
+/* #rgpd{
+    display:none;
+} */
+
+#rgpd:checked+label{
+    color:blue;
+}
+
+
+.presentation1{
+    font-family:sans-serif;
+    border:5px solid black;
+    padding:10px;
+    margin:5px 0;
+    box-shadow:3px 3px 3px 0 rgba(0,0,0,0.4);
+}
+
+.presentation2{
+    font-family:sans-serif;
+    border:5px solid green;
+    padding:10px;
+    margin:5px 0;
+    box-shadow:3px 3px 3px 0 rgba(0,0,0,0.4);
+}

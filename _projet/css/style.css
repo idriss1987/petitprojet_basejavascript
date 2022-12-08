@@ -1,0 +1,325 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html{
+    min-height:100vh; /* viewport height */
+    position:relative;
+}
+
+header nav, footer{
+    padding:10px 0;
+}
+
+header,footer{
+    background:black;
+    color:white;   
+}
+
+main{
+    padding-bottom:38px;
+}
+
+nav{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    position:relative;
+}
+nav h1{
+    margin-left:20px;
+}
+
+#menu{
+    margin-right:20px;
+    display:flex;
+    list-style:none;
+}
+#menu li{
+    margin-right:15px;
+}
+#menu li a, h1 a{
+    color:white;
+    text-decoration: none;
+}
+#menu li a:hover{
+    text-decoration: underline;
+}
+
+#burger{
+    font-size:23px;
+    border:1px solid white;
+    border-radius:4px;
+    width:35px;
+    height:35px;
+    display:none;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+    margin-right:20px;
+}
+
+#fermer{
+    display:none;
+    position:absolute;
+    top:0;
+    right:10px;
+    font-size:2.5rem;
+    cursor:pointer;    
+}
+
+
+.conteneur{
+    max-width:1400px;
+    margin:0 auto;
+    padding:20px;
+}
+
+footer{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    text-align: center;
+}
+
+form{
+    max-width:60%;
+    margin:25px auto 0;    
+}
+form label{
+    display:block;
+    margin-bottom:.4rem;
+}
+form input{
+    width:90%;
+    padding:8px;
+    margin-bottom:.4rem;
+}
+#avatar{
+    display:none;
+}
+#preview{
+    cursor:pointer;
+}
+#oeil{
+    cursor:pointer;
+    user-select: none;
+}
+
+#preview{
+    max-width:100%;
+}
+
+
+.bordure{
+    border:5px dashed blue;
+}
+
+
+#bandeaucookies{
+    background:black;
+    color:white;
+    width:60vw;
+    text-align:center;
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate3d(-50%,-50%,0);
+    overflow:hidden;
+    transition:1s;
+    max-height:0;
+    z-index:99;
+}
+
+
+#bandeaucookies p{
+    padding:25px 10px;
+}
+
+#bandeaucookies.ouvert{
+    max-height:100%;
+}
+
+#map{
+    width:100%;
+    height:450px;
+    border:1px solid black;
+    margin-top:20px;
+}
+
+#adresse,#aller{
+    padding:8px;
+}
+#adresse{
+    width:75%;
+}
+
+/* Carrousel */
+.carrousel{
+    position:relative;
+    width:75vw;
+    max-width:1200px;
+    height:calc(75vw * 9 / 16);
+    max-height:calc(1200px * 9 / 16);
+    margin:35px auto 0;
+    border:15px solid white;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.3);
+    overflow:hidden;
+}
+
+.carrousel .reglette{
+    display:flex;
+    justify-content: flex-start;
+    align-items:center;
+    height:100%;
+    position:relative;
+    top:0;
+    left:0;
+}
+
+.carrousel .reglette figure{
+    height:100%;    
+    position:relative;
+}
+.carrousel .reglette figure img{
+    width:100%;
+    height:100%;
+}
+
+.carrousel .reglette figure figcaption{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    text-align:center;
+    font-size:2rem;
+    color:black;
+    padding:10px;
+    background-color:rgba(255,255,255,.5);
+}
+
+.carrousel .next, .carrousel .previous{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    width:30px;    
+    height:30px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background:rgba(0,0,0,0.1);
+    border-radius:50%;
+    cursor:pointer;
+    transition:.3s;
+    color:white;
+    z-index:10;
+}
+.carrousel .next:hover, .carrousel .previous:hover{
+    background:rgba(0,0,0,0.6);
+}
+
+.carrousel .previous{
+    left:10px;
+}
+.carrousel .next{
+    right:10px;
+}
+
+/* Pour Edge et IE : cacher l'oeil ajouté par le navigateur */
+::-ms-reveal{
+  display:none;
+}
+
+.animavance{
+    animation:avance 1s ease-in-out forwards ;
+    animation-iteration-count: 1;
+}
+
+.animrecule{
+    animation:recule 1s ease-in-out  forwards ;
+    animation-iteration-count: 1;
+}
+
+@keyframes avance{
+    0%{
+        left:0;
+    }
+    100%{
+        left:-100%;
+    }
+}
+@keyframes recule{
+    0%{
+        left:-100%;        
+    }
+    100%{
+        left:0;
+    }
+}
+
+
+#resultats{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: space-evenly;
+}
+
+.fiche_produit{
+    width:30%;
+    padding:20px;
+    margin:20px 0;
+    border:1px solid black;
+}
+.fiche_produit img{
+    max-width:100%;
+}
+.fiche_produit img+div{
+    font-size:1.5rem;
+    font-weight: bold;
+    text-align:right;
+}
+
+
+/* ----------- MEDIA QUERIES -------------*/
+@media screen and (max-width:768px){
+
+    .fiche_produit{
+        width:90%;
+    }
+
+    form{
+        max-width:85%;
+    }
+
+    #burger{
+        display:flex;
+    }
+
+    #menu{
+        position:absolute;
+        flex-direction:column;
+        top:0;
+        left:0;
+        background:black;
+        width:100%;
+        height:100vh;
+        z-index:9999;
+        padding-top:30px;
+        transform:translateX(-100%);
+    }
+    #menu li{
+        margin:10px;
+        text-align:center;
+    }
+    #fermer{
+        display:block;
+    }
+    #menu.deploye{
+        transform:translateX(0);
+    }
+    #menu.transition{
+        transition:1s;
+    }
+
+}

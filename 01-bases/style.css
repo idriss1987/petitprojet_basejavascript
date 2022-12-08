@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body{
+    width:90vw;
+    max-width:1400px;
+    margin:0 auto;
+    font-family:sans-serif;
+    padding:20px 0;
+}
+
+h1,h2,h3,hr{
+    margin:10px 0;
+}
+
+h2 {
+    background-color: black;
+    color: white;
+    padding: 8px;
+}
+
+td {
+    width: 30px;
+    height: 30px;
+    border: 1px solid black;
+}
+
+table {
+    margin-top:10px;
+    border-collapse: collapse;
+}
+
+
+/* even: pair, odd : impair */
+tr:nth-child(odd) td:nth-child(even) {
+    background: black;
+}
+
+tr:nth-child(even) td:nth-child(odd) {
+    background: black;
+}

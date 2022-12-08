@@ -1,0 +1,16 @@
+.bleu {
+    background: blue;
+    color: white;
+}
+
+p {
+    transition: .7s;
+}
+
+.orange {
+    background: orange;
+}
+
+.bordure{
+    border:1px solid black;
+}
